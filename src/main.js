@@ -371,6 +371,7 @@ function doubleClickEvent(e) {
       var node = drawNode(addedNode, e.clientX, e.clientY, defaultShape, radius, defaultColor);
       selectNode(node, !e.shiftKey);
       addLabel("Node Name", node);
+      //initEleContent(e, addedNode.id)
       break;
     case "node-rep":
     case "label-rep":
@@ -793,6 +794,31 @@ function quickAdd(key){
   selectNode(node);
   addLabel("Node Name", node);
 }
+
+//function postMsgOut() {
+//  window.parent.postMessage("test", "*");
+//}
+//
+//function initEleContent(e, id) {
+//  let newNoteAddress = WEBSTRATES_URL_PREFIX + id;
+//  let wrapper = document.createElement('div');
+//  wrapper.setAttribute("id", "newNoteWrapper");
+//  
+//  let toFrame = '<iframe id="newNoteWindow" src="'+ newNoteAddress + '"><p>ERROR: Your browser does not support iframes.</p></iframe>';
+//  
+//  wrapper.innerHTML = toFrame;
+//  document.getElementById("content_container").appendChild(wrapper);
+//  
+//  let toInjectMsger = document.createElement('script');
+//  toInjectMsger.innerHTML = 'window.onload = ' + postMsgOut.toString() + ';';
+//  document.getElementById("newNoteWindow").contentWindow.document.head.innerHTML += toInjectMsger;
+//  
+//  let appendElement = '<div class="note" contenteditable="true" style="left: 8px;top: 8px;width: 235px;min-height: 100px;padding: 16px;box-shadow: 5px 5px 10px gray;background-color: rgb(255, 255, 150);font-size: 12pt;word-wrap: break-word;"></div><br>';  
+//  document.getElementById("newNoteWindow").contentWindow.document.body.innerHTML += appendElement;
+//  
+//  console.log(document.getElementById("newNoteWindow").contentWindow.document);
+//  
+//} 
 
 function addEleContent(e) {
   let newNodeAddress = WEBSTRATES_URL_PREFIX + hoveredEle;
