@@ -33,16 +33,29 @@
         <div id="d3_container">
             <svg class="canvas" id="canvas"></svg>
         </div>
+
         <div id="content_container">
-            <h3 id="content_header">Content Browser</h3>
-            <button id="uploadImageBtn">Upload Image to Map</button>
+
+            <!-- <h3 id="content_header">Content Browser</h3> --> 
+
+            <img src="CC Logo1.png" alt="logo" id="ccLogo">
+            <div class="tab">
+                <button id="toolButton" onclick="showToolSect()" class="toolbar">Tools</button>
+                <button id="noteButton" onclick="showNoteSect()" class="toolbar">Notes</button>
+                <button id="resourceButton" onclick="showRscSect()" class="toolbar">Resources</button>
+            </div>
+
+            <div id="toolSection" class="tabcontent">
+            <button id="uploadImageBtn" class="toolbar">Upload Image to Map</button>
                 <span id="label_edit_container">
+                    <p>Label</p>
                     <button id="label_text_increase">A</button>
                     <button id="label_text_decrease">A</button>
                     <button id="label_text_bold">B</button>
                     <button id="label_text_italics">I</button>
                 </span>
                 <span id="text_color_container">
+                    <p>Color</p>
                     <button class="text_color_button" id="green_text">A</button>
                     <button class="text_color_button" id="red_text">A</button>
                     <button class="text_color_button" id="blue_text">A</button>
@@ -62,8 +75,40 @@
                 </span>
                 <br>
                 <span id="node_border_container">
-                  <button id="toggle_touch_drawing" onclick="toggleDrawFunc()"><div><h4>Enable Drawing</h4></div></button>
+                  <button id="toggle_touch_drawing" onclick="toggleDrawFunc()"><div><h4>Draw</h4></div></button>
                 </span>
+            </div>
+
+            <div id="noteSection" class="tabcontent">
+                <h3>Notes here</h3>
+            </div>
+
+            <div id="resourceSection" class="tabcontent">
+                <h3>Resources here</h3>
+            </div>
+
+            <img src="helpButton.png" alt="help" id="helpButton" onclick="showHelpSect()">
+
+            <!-- Modal for help -->
+            <div id="helpModal" class="modal">
+              <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Help</h2>
+                    <span class="close" onclick="closeModal()">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <p>Stuff about nodes</p>
+                    <p>Stuff about lines</p>
+                    <p>Stuff about notes</p>
+                    <p>Stuff about resources</p>
+                </div>
+                <div class="modal-footer">
+                    <span class="close" onclick="closeModal()">
+                        <button id="closeButton" class="toolbar">Close</button>
+                    </span>
+                </div>
+              </div>
+            </div>
 
         </div>
     </div>

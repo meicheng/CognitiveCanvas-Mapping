@@ -35,6 +35,11 @@ var zoom = null;
 
 var quickAddDist = 10 + MAX_RADIUS;
 
+// toolbar section blocks
+var toolSection = document.getElementById("toolSection");
+var noteSection = document.getElementById("noteSection");
+var rscSection = document.getElementById("resourceSection");
+
 canvas.addEventListener("mouseup", (e) => mouseUpListener(e));
 canvas.addEventListener("mousedown", (e) => mouseDownListener(e));
 canvas.addEventListener("contextmenu", (e) => rightClickListener(e));
@@ -984,4 +989,56 @@ function toggleDrawFunc() {
   let eraser = document.querySelector(".drawing-instrument-tools .erase-drawing-canvas");
   eraser.style.background = "darkgrey";
   
+}
+
+function showToolSect() {
+
+  var toolSection = document.getElementById("toolSection");
+  var noteSection = document.getElementById("noteSection");
+  var rscSection = document.getElementById("resourceSection");
+
+  toolSection.style.display = "block";
+  noteSection.style.display = "none";
+  rscSection.style.display = "none";
+
+}
+
+function showNoteSect() {
+
+  var toolSection = document.getElementById("toolSection");
+  var noteSection = document.getElementById("noteSection");
+  var rscSection = document.getElementById("resourceSection");
+
+  toolSection.style.display = "none";
+  noteSection.style.display = "block";
+  rscSection.style.display = "none";
+
+}
+
+function showRscSect() {
+
+  var toolSection = document.getElementById("toolSection");
+  var noteSection = document.getElementById("noteSection");
+  var rscSection = document.getElementById("resourceSection");
+
+  toolSection.style.display = "none";
+  noteSection.style.display = "none";
+  rscSection.style.display = "block";
+
+}
+
+// Modal section
+
+function showHelpSect() {
+
+  var modal = document.getElementById("helpModal");
+  modal.style.display = "block";
+
+}
+
+function closeModal() {
+
+  var modal = document.getElementById("helpModal");
+  modal.style.display = "none";
+
 }
