@@ -36,31 +36,18 @@
 
         <div id="content_container">
 
-            <!-- <h3 id="content_header">Content Browser</h3> --> 
+            <!-- <h3 id="content_header">Content Browser</h3>
 
-            <img src="CC Logo1.png" alt="logo" id="ccLogo">
             <div class="tab">
                 <button id="toolButton" onclick="showToolSect()" class="toolbar">Tools</button>
                 <button id="noteButton" onclick="showNoteSect()" class="toolbar">Notes</button>
                 <button id="resourceButton" onclick="showRscSect()" class="toolbar">Resources</button>
-            </div>
+            </div> -->
 
             <div id="toolSection" class="tabcontent">
-            <button id="uploadImageBtn" class="toolbar">Upload Image to Map</button>
-                <span id="label_edit_container">
-                    <p>Label</p>
-                    <button id="label_text_increase">A</button>
-                    <button id="label_text_decrease">A</button>
-                    <button id="label_text_bold">B</button>
-                    <button id="label_text_italics">I</button>
-                </span>
-                <span id="text_color_container">
-                    <p>Color</p>
-                    <button class="text_color_button" id="green_text">A</button>
-                    <button class="text_color_button" id="red_text">A</button>
-                    <button class="text_color_button" id="blue_text">A</button>
-                    <button class="text_color_button" id="black_text">A</button>
-                </span>
+            <div onclick="showEdit()"><h1>Edit</h1></div>
+            <div id="edit">
+                <h2>Node</h2>
                 <span id="node_color_container">
                     <button class="node_color_button" id="green_node"></button>
                     <button class="node_color_button" id="red_node"></button>
@@ -73,11 +60,36 @@
                     <button class="node_color_button" id="blue_border"></button>
                     <button class="node_color_button" id="black_border"></button>
                 </span>
-                <br>
+                <h2>Text</h2>
+                <span id="text_color_container">
+                    <button class="text_color_button" id="green_text">A</button>
+                    <button class="text_color_button" id="red_text">A</button>
+                    <button class="text_color_button" id="blue_text">A</button>
+                    <button class="text_color_button" id="black_text">A</button>
+                </span>
+                <br></br>
+                <h2>Font</h2>
+                <span id="label_edit_container">
+                    <button id="label_text_increase">
+                        <img src="src/images/font-size-increase.png" width="80%">
+                    </button>
+                    <button id="label_text_decrease">
+                        <img src="src/images/font-size-decrease.png" width="80%">
+                    </button>
+                    <button id="label_text_bold" style="font-weight: bold">B</button>
+                    <button id="label_text_italics" style="font-weight: italic">I</button>
+                </span>
+                <br></br>
+            </div>
+            <div onclick="showDraw()""><h1>Draw</h1></div>
+            <div id="draw">
                 <span id="node_border_container">
-                  <button id="toggle_touch_drawing" onclick="toggleDrawFunc()"><div><h4>Draw</h4></div></button>
+                  <button id="toggle_touch_drawing" onclick="toggleDrawFunc()"><div><h4 style="font-size: 12px">Enable</h4></div></button>
                 </span>
             </div>
+            <button id="uploadImageBtn" class="toolbar">Upload Image to Map</button>
+
+            <!-- Possibly reimplement in the next edits to link tabs in one component, versus across topbar and sidebar components.
 
             <div id="noteSection" class="tabcontent">
                 <h3>Notes here</h3>
@@ -85,30 +97,7 @@
 
             <div id="resourceSection" class="tabcontent">
                 <h3>Resources here</h3>
-            </div>
-
-            <img src="helpButton.png" alt="help" id="helpButton" onclick="showHelpSect()">
-
-            <!-- Modal for help -->
-            <div id="helpModal" class="modal">
-              <div class="modal-content">
-                <div class="modal-header">
-                    <h2>Help</h2>
-                    <span class="close" onclick="closeModal()">&times;</span>
-                </div>
-                <div class="modal-body">
-                    <p>Stuff about nodes</p>
-                    <p>Stuff about lines</p>
-                    <p>Stuff about notes</p>
-                    <p>Stuff about resources</p>
-                </div>
-                <div class="modal-footer">
-                    <span class="close" onclick="closeModal()">
-                        <button id="closeButton" class="toolbar">Close</button>
-                    </span>
-                </div>
-              </div>
-            </div>
+            </div> -->
 
         </div>
     </div>
@@ -136,4 +125,44 @@
     </div>
 </ul>
 </body>
+
+<style>
+
+    @font-face {
+      font-family: "Miso Bold";
+      src: url("src/miso-bold-webfont.woff");
+    }
+
+    @font-face {
+      font-family: "Miso Light";
+      src: url("src/miso-light-webfont.woff");
+    }
+
+    @font-face {
+      font-family: "Miso Regular";
+      src: url("src/miso-regular-webfont.woff");
+    }
+
+    h1, h2, button, div {
+        font-family: 'Miso Regular';
+    }
+
+    h2 {
+        color: #FCE946;
+    }
+
+    #toolSection {
+        text-align: center;
+        background-color: #5D5D5D;
+    }
+
+    #uploadImageBtn {
+        background-color: #E55060;
+    }
+
+    h1 {
+        background-color: #FCE946;
+    }
+
+</style>
 </html>

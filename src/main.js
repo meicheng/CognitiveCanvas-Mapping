@@ -991,6 +991,33 @@ function toggleDrawFunc() {
   
 }
 
+function showEdit() {
+
+  var editSection = document.getElementById("edit");
+
+  if (editSection.style.display === "none") {
+      editSection.style.display = "block";
+  } else {
+      editSection.style.display = "none";
+  }
+
+}
+
+function showDraw() {
+
+  var drawSection = document.getElementById("draw");
+
+  if (drawSection.style.display === "none") {
+      drawSection.style.display = "block";
+  } else {
+      drawSection.style.display = "none";
+  }
+
+}
+
+/* For tabs if we want to try and put them in the same 
+component/container instead of trying to communicate between nav and side bars.
+
 function showToolSect() {
 
   var toolSection = document.getElementById("toolSection");
@@ -1025,20 +1052,4 @@ function showRscSect() {
   noteSection.style.display = "none";
   rscSection.style.display = "block";
 
-}
-
-// Modal section
-
-function showHelpSect() {
-
-  var modal = document.getElementById("helpModal");
-  modal.style.display = "block";
-
-}
-
-function closeModal() {
-
-  var modal = document.getElementById("helpModal");
-  modal.style.display = "none";
-
-}
+}*/
